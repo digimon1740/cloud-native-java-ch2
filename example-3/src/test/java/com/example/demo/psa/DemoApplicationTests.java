@@ -1,4 +1,4 @@
-package com.example.demo.componentscan;
+package com.example.demo.psa;
 
 import com.example.demo.Customer;
 import com.example.demo.DemoApplication;
@@ -8,9 +8,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.sql.DataSource;
 import java.util.Collection;
 
 @RunWith(SpringRunner.class)
@@ -20,11 +20,11 @@ public class DemoApplicationTests {
 	private CustomerService customerService;
 
 	@Autowired
-	private DataSource dataSource;
+	private JdbcTemplate jdbcTemplate;
 
 	@Before
 	public void before() {
-		customerService = new CustomerService(dataSource);
+		customerService = new CustomerService(jdbcTemplate);
 	}
 
 	@Test

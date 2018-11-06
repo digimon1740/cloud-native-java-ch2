@@ -1,21 +1,26 @@
-package com.example.demo.componentscan;
+package com.example.demo.psa;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-import org.springframework.stereotype.Controller;
 
 import javax.sql.DataSource;
 
-@Configuration("ApplicationConfiguration2")
-@ComponentScan(basePackages = "com.example.demo.componentscan")
-public class ApplicationConfiguration2 {
+//@Configuration("ApplicationConfiguration3")
+//@ComponentScan(basePackages = "com.example.demo.psa")
+public class ApplicationConfiguration3 {
 
 	@Bean
 	DataSource dataSource() {
 		return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2)
 			.setName("customers").build();
+	}
+
+	@Bean
+	JdbcTemplate jdbcTemplate(DataSource dataSource) {
+		return new JdbcTemplate(dataSource);
 	}
 }

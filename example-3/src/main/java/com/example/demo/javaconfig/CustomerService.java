@@ -1,5 +1,7 @@
 package com.example.demo.javaconfig;
 
+import com.example.demo.Customer;
+
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;

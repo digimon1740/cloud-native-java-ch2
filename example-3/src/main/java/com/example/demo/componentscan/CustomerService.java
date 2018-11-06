@@ -1,7 +1,8 @@
 package com.example.demo.componentscan;
 
+import com.example.demo.Customer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -13,7 +14,7 @@ import java.util.Collection;
 import java.util.List;
 
 //@Component
-@Service
+@Component("customerServiceComponentScan")
 public class CustomerService {
 
 	private DataSource dataSource;

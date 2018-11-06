@@ -1,11 +1,11 @@
-package com.example.demo.componentscan;
+package com.example.demo;
 
 public class Customer {
 
 	private Long id;
 	private String email;
 
-	Customer(Long id, String email) {
+	public Customer(Long id, String email) {
 		this.id = id;
 		this.email = email;
 	}
