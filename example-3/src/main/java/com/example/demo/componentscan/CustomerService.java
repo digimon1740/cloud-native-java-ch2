@@ -23,7 +23,7 @@ public class CustomerService {
 		this.dataSource = dataSource;
 	}
 
-	Collection<Customer> findAll() {
+	public Collection<Customer> findAll() {
 		List<Customer> customerList = new ArrayList<>();
 		try {
 			try (Connection c = dataSource.getConnection()) {
